@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="Theme.MarvelSuperHeroes.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MarvelSuperHeroes.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MarvelSuperHeroes.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MarvelHeroes.Splash" parent="Theme.MarvelSuperHeroes.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+</resources>

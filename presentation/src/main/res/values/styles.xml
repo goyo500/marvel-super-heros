@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="hero_item_title" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/sixteen_text</item>
+    </style>
+
+    <style name="hero_item_value">
+        <item name="android:textColor">@color/blue_dark</item>
+        <item name="android:textSize">@dimen/fourteen_text</item>
+    </style>
+
+    <style name="hero_detail_title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/sixteen_text</item>
+    </style>
+
+    <style name="hero_detail_value" parent="TextAppearance.AppCompat.Menu">
+        <item name="android:textColor">@color/blue_dark</item>
+        <item name="android:textSize">@dimen/twenty_four_text</item>
+    </style>
+</resources>

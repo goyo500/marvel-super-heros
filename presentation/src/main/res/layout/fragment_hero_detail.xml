@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ablContent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/two_hundred_eighty"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.MarvelSuperHeroes.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/ctlContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <ImageView
+                android:id="@+id/ivHeroPic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two_hundred_eighty"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tHero"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:layout_collapseMode="pin"
+
+                app:popupTheme="@style/Theme.MarvelSuperHeroes.PopupOverlay" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/vTopSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one"
+        android:background="@color/blue_separator" />
+
+
+    <include
+        android:id="@+id/dataContent"
+        layout="@layout/content_scrolling" />
+
+    <View
+        android:id="@+id/vBottomSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one"
+        android:background="@color/blue_separator"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

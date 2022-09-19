@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvErrorContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/white"
+        app:cardCornerRadius="@dimen/six"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llErrorContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivErrorClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/six"
+                android:layout_marginEnd="@dimen/six"
+                android:layout_marginBottom="@dimen/sixteen"
+                android:src="@drawable/ic_close"
+                app:tint="@android:color/black"
+                android:padding="@dimen/six"
+                android:contentDescription="@string/empty"/>
+
+            <ImageView
+                android:id="@+id/ivErrorIcon"
+                android:layout_width="@dimen/forty_eight"
+                android:layout_height="@dimen/forty_eight"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/sixteen"
+                android:layout_marginEnd="@dimen/sixteen"
+                android:src="@drawable/error_icon"
+                android:contentDescription="@string/empty"/>
+
+            <TextView
+                android:id="@+id/tvErrorAlert"
+                android:textSize="@dimen/twenty_two_text"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteen"
+                android:layout_marginTop="@dimen/sixteen"
+                android:layout_marginEnd="@dimen/sixteen"
+                android:textAllCaps="true"
+                android:layout_gravity="center"
+                android:typeface="monospace"
+                android:text="@string/alert" />
+
+            <TextView
+                android:id="@+id/tvErrorText"
+                android:textSize="@dimen/twenty_two_text"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteen"
+                android:layout_marginTop="@dimen/sixteen"
+                android:layout_marginEnd="@dimen/sixteen"
+                android:minLines="2" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
