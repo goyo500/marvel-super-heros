@@ -16,6 +16,6 @@ class SynchronizeSuperHeroDetailUc @Inject constructor(
     override suspend fun run(params: Int?): Either<Failure, Int> =
         params?.let { id ->
             superHeroesRepository.fetchSuperHeroDetailData(id)
-        }?:Failure.NoData().left()
+        } ?: Failure.NoData().left()
 
 }

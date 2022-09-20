@@ -5,13 +5,14 @@ import es.plexus.android.data.common.extensions.isNetworkAvailable
 
 interface NetworkManager {
 
-    companion object{
+    companion object {
         const val NETWORK_MANAGER_TAG = "networkManagerTag"
     }
+
     suspend fun isNetworkAvailable(): Boolean
 }
 
 internal class NetworkManagerImpl(private val context: Context) : NetworkManager {
 
-    override suspend  fun isNetworkAvailable(): Boolean = context.isNetworkAvailable()
+    override suspend fun isNetworkAvailable(): Boolean = context.isNetworkAvailable()
 }

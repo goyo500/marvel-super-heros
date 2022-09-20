@@ -30,47 +30,47 @@
                 android:layout_marginTop="@dimen/six"
                 android:layout_marginEnd="@dimen/six"
                 android:layout_marginBottom="@dimen/sixteen"
-                android:src="@drawable/ic_close"
-                app:tint="@android:color/black"
+                android:contentDescription="@string/empty"
                 android:padding="@dimen/six"
-                android:contentDescription="@string/empty"/>
+                android:src="@drawable/ic_close"
+                app:tint="@android:color/black" />
 
             <ImageView
                 android:id="@+id/ivErrorIcon"
                 android:layout_width="@dimen/forty_eight"
                 android:layout_height="@dimen/forty_eight"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/sixteen"
                 android:layout_marginEnd="@dimen/sixteen"
-                android:src="@drawable/error_icon"
-                android:contentDescription="@string/empty"/>
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/empty"
+                android:scaleType="centerInside"
+                android:src="@drawable/error_icon" />
 
             <TextView
                 android:id="@+id/tvErrorAlert"
-                android:textSize="@dimen/twenty_two_text"
-                android:textColor="@android:color/holo_red_light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/sixteen"
                 android:layout_marginTop="@dimen/sixteen"
                 android:layout_marginEnd="@dimen/sixteen"
+                android:text="@string/alert"
                 android:textAllCaps="true"
-                android:layout_gravity="center"
-                android:typeface="monospace"
-                android:text="@string/alert" />
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/twenty_two_text"
+                android:typeface="monospace" />
 
             <TextView
                 android:id="@+id/tvErrorText"
-                android:textSize="@dimen/twenty_two_text"
-                android:textColor="@android:color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/sixteen"
                 android:layout_marginTop="@dimen/sixteen"
                 android:layout_marginEnd="@dimen/sixteen"
-                android:minLines="2" />
+                android:minLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/twenty_two_text" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

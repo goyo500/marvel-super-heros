@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 import es.plexus.android.domain.feature.HeroDetailDomainLayerBridge
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHero
@@ -21,7 +20,6 @@ import es.plexus.android.presentation.feature.common.ui.ErrorDialogFragment
 import es.plexus.android.presentation.feature.heroes.detail.ui.state.HeroDetailState
 import es.plexus.android.presentation.feature.heroes.detail.viewmodel.HeroDetailViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -30,7 +28,7 @@ import kotlinx.coroutines.launch
 class HeroDetailFragment : Fragment(),
     BaseMvvmView<HeroDetailViewModel, HeroDetailDomainLayerBridge, HeroDetailState> {
 
-    override val viewModel: HeroDetailViewModel by  viewModels()
+    override val viewModel: HeroDetailViewModel by viewModels()
     private lateinit var viewBinding: FragmentHeroDetailBinding
 
 

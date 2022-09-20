@@ -1,7 +1,7 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 
 plugins {
-    id (Plugins.androidLibrary)
+    id(Plugins.androidLibrary)
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinAndroidExtensions)
     kotlin(Plugins.kotlinKapt)
@@ -28,12 +28,18 @@ android {
     buildTypes {
         named("release").configure {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
 
         named("debug").configure {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
 
 
@@ -59,7 +65,7 @@ dependencies {
     implementation(Libraries.kotlinStdLib)
     implementation(Libraries.kotlinCoroutinesCore)
     implementation(Libraries.retrofitCoroutinesAdapter)
-    
+
     // other modules
     implementation(project(":domain"))
 

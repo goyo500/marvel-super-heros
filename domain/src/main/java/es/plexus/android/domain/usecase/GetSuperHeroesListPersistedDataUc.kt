@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 const val GET_SUPER_HEROES_LIST_PERSISTED_UC_TAG = "getSuperHeroesListPersistedUc"
 
-class GetSuperHeroesListPersistedDataUc @Inject constructor (
+class GetSuperHeroesListPersistedDataUc @Inject constructor(
     private val superHeroesRepository: SuperHeroesRepository
 ) : DomainLayerContract.Presentation.UseCase<Any, SuperHeroList> {
 

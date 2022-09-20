@@ -1,7 +1,6 @@
 package es.plexus.android.domain.model
 
 
-
 data class SuperHero(
     val id: Int,
     val name: String,

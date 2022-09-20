@@ -1,7 +1,6 @@
 package es.plexus.android.domain.model
 
 
-
 const val DEFAULT_STRING: String = ""
 const val DEFAULT_INTEGER: Int = -1
 

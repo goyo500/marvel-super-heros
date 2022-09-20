@@ -2,8 +2,6 @@ package es.plexus.android.domain
 
 import arrow.core.Either
 import es.plexus.android.domain.model.Failure
-import es.plexus.android.domain.model.SuperHero
-import es.plexus.android.domain.model.SuperHeroList
 import kotlinx.coroutines.*
 
 interface DomainLayerContract {
@@ -29,7 +27,6 @@ interface DomainLayerContract {
         companion object {
             const val SUPER_HEROES_REPOSITORY_TAG = "superHeroesRepository"
         }
-
 
 
     }

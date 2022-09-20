@@ -10,9 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
-import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.feature.HeroesListDomainLayerBridge
+import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHeroList
 import es.plexus.android.presentation.base.BaseMvvmView
 import es.plexus.android.presentation.base.ScreenState

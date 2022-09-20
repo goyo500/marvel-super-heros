@@ -8,7 +8,6 @@ import es.plexus.android.data.common.contract.DataLayerContract
 import es.plexus.android.data.datasources.superHeroesDB.mappers.toDomain
 import es.plexus.android.data.datasources.superHeroesDB.mappers.toEntity
 import es.plexus.android.data.datasources.superHeroesDB.mappers.toEntityList
-import es.plexus.android.domain.DomainLayerContract
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHero
 import es.plexus.android.domain.model.SuperHeroList

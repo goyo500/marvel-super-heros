@@ -1,7 +1,7 @@
 const val kotlinVersion = "1.7.10"
 
 object Versions {
-    const val gradle = "7.1.3"
+    const val gradle = "7.2.0"
     const val safeArgs = "2.5.2"
     const val hilt = "2.43.2"
     const val androixHilt = "1.0.0"
@@ -27,8 +27,8 @@ object Versions {
     const val retrofit = "2.8.1"
     const val moshi = "1.9.3"
     const val interceptor = "4.9.0"
-    const val lottie = "3.7.1"
-    const val glide = "4.11.0"
+    const val lottie = "5.2.0"
+    const val glide = "4.13.2"
 
     // test
     const val junit = "4.13"
@@ -42,7 +42,8 @@ object Build {
 
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.gradle}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.safeArgs}"
+    const val navigationSafeArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.safeArgs}"
     const val daggerHilstPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
 
 }
@@ -100,7 +101,8 @@ object Libraries {
     const val navigationFragment =
         "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
-    const val navigationFeatures = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
+    const val navigationFeatures =
+        "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
 
     // google
     const val googleMaterial = "com.google.android.material:material:${Versions.googleMaterial}"

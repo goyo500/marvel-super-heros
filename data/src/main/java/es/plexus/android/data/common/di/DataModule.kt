@@ -109,8 +109,8 @@ object DataModule {
     fun provideSuperHerosDataSource(
         database: HeroesDatabase
     ): DataLayerContract.SuperHeroesDataSource.Persistence {
-      return SuperHeroesPersistenceDataSource(
-          database = database
+        return SuperHeroesPersistenceDataSource(
+            database = database
         )
     }
 
@@ -119,7 +119,7 @@ object DataModule {
         @NetworkManagerNamed networkManager: NetworkManager,
         @SuperHeroApiClientNamed apiClient: Retrofit,
     ): DataLayerContract.SuperHeroesDataSource.Remote {
-       return SuperHerosRemoteDataSource(
+        return SuperHerosRemoteDataSource(
             apiClient = apiClient,
             networkManager = networkManager
         )

@@ -3,12 +3,13 @@
     package="es.plexus.android.presentation">
 
     <application>
-        <activity android:name=".feature.splash.ui.view.SplashActivity"
-            android:theme="@style/MarvelHeroes.Splash"
+        <activity
+            android:name=".feature.splash.ui.view.SplashActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:noHistory="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/MarvelHeroes.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,9 +17,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:exported="true"
             android:name=".feature.heroes.list.ui.view.HeroesActivity"
-            android:theme="@style/Theme.MarvelSuperHeroes.NoActionBar"/>
+            android:exported="true"
+            android:theme="@style/Theme.MarvelSuperHeroes.NoActionBar" />
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ class HeroesActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
     }
 
-    override fun onSupportNavigateUp(): Boolean = findNavController(R.id.navHostFragment).navigateUp()
+    override fun onSupportNavigateUp(): Boolean =
+        findNavController(R.id.navHostFragment).navigateUp()
 
 }

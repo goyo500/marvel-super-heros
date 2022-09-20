@@ -1,5 +1,5 @@
 plugins {
-    id (Plugins.androidLibrary)
+    id(Plugins.androidLibrary)
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinKapt)
     id(Plugins.daggerHilt)
@@ -19,7 +19,10 @@ android {
     buildTypes {
         named("release").configure {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 

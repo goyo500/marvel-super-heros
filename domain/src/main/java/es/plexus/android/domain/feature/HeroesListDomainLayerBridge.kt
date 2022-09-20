@@ -1,7 +1,6 @@
 package es.plexus.android.domain.feature
 
 import arrow.core.Either
-import es.plexus.android.domain.DomainLayerContract
 import es.plexus.android.domain.base.BaseDomainLayerBridge
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHero
@@ -21,7 +20,7 @@ class HeroesListDomainLayerBridge @Inject constructor(
     suspend fun getSuperHeroesList(): Either<Failure, SuperHeroList> =
         getSuperHeroesListUc.run()
 
-    suspend fun synchronizeSuperHeroDetail(params : Int): Either<Failure, Int> =
+    suspend fun synchronizeSuperHeroDetail(params: Int): Either<Failure, Int> =
         synchronizeSuperHeroDetailUc.run(params)
 
     suspend fun getSuperHeroDetail(params: Int): Either<Failure, SuperHero> =

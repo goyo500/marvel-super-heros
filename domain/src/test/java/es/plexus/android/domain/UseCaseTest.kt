@@ -28,19 +28,23 @@ import org.koin.test.inject
 @ExperimentalCoroutinesApi
 class UseCaseTest : KoinTest {
 
-    private val fetchSuperHeroesListDataUc : DomainLayerContract.Presentation.UseCase<Any, Boolean> by inject(
-        named(name = FETCH_SUPER_HEROES_LIST_UC_TAG))
+    private val fetchSuperHeroesListDataUc: DomainLayerContract.Presentation.UseCase<Any, Boolean> by inject(
+        named(name = FETCH_SUPER_HEROES_LIST_UC_TAG)
+    )
 
-    private val fetchSuperHeroDetailUc : DomainLayerContract.Presentation.UseCase<Int, Int> by inject(
-        named(name = FETCH_SUPER_HERO_DETAIL_UC_TAG))
+    private val fetchSuperHeroDetailUc: DomainLayerContract.Presentation.UseCase<Int, Int> by inject(
+        named(name = FETCH_SUPER_HERO_DETAIL_UC_TAG)
+    )
 
-    private val getSuperHeroesListDataUc : DomainLayerContract.Presentation.UseCase<Any, SuperHeroList> by inject(
-        named(name = GET_SUPER_HEROES_LIST_PERSISTED_UC_TAG))
+    private val getSuperHeroesListDataUc: DomainLayerContract.Presentation.UseCase<Any, SuperHeroList> by inject(
+        named(name = GET_SUPER_HEROES_LIST_PERSISTED_UC_TAG)
+    )
 
-    private val getSuperHeroDetailUc : DomainLayerContract.Presentation.UseCase<Int, SuperHero> by inject(
-        named(name = GET_SUPER_HERO_DETAIL_PERSISTED_UC_TAG))
+    private val getSuperHeroDetailUc: DomainLayerContract.Presentation.UseCase<Int, SuperHero> by inject(
+        named(name = GET_SUPER_HERO_DETAIL_PERSISTED_UC_TAG)
+    )
 
-    private val superHeroesRepository : SuperHeroesRepository = mock()
+    private val superHeroesRepository: SuperHeroesRepository = mock()
 
     @Before
     fun setUp() {
@@ -71,7 +75,9 @@ class UseCaseTest : KoinTest {
     fun `Fetching Super Heroes Data With Failure`() =
         runBlockingTest {
             // given
-            whenever(superHeroesRepository.fetchSuperHeroesListData()).doReturn(Failure.NoData().left())
+            whenever(superHeroesRepository.fetchSuperHeroesListData()).doReturn(
+                Failure.NoData().left()
+            )
             // when
             val actualResult = fetchSuperHeroesListDataUc.run()
             // then
@@ -93,7 +99,9 @@ class UseCaseTest : KoinTest {
     fun `Fetching Super Hero Detail With Failure`() =
         runBlockingTest {
             // given
-            whenever(superHeroesRepository.fetchSuperHeroDetailData(1)).doReturn(Failure.NoData().left())
+            whenever(superHeroesRepository.fetchSuperHeroDetailData(1)).doReturn(
+                Failure.NoData().left()
+            )
             // when
             val actualResult = fetchSuperHeroDetailUc.run(1)
             // then
@@ -104,7 +112,9 @@ class UseCaseTest : KoinTest {
     fun `Getting Super Heroes Data With Success`() =
         runBlockingTest {
             // given
-            whenever(superHeroesRepository.getSuperHeroesListPersistedData()).doReturn(getMockedSuperHeroData().right())
+            whenever(superHeroesRepository.getSuperHeroesListPersistedData()).doReturn(
+                getMockedSuperHeroData().right()
+            )
             // when
             val actualResult = getSuperHeroesListDataUc.run()
             // then
@@ -115,7 +125,9 @@ class UseCaseTest : KoinTest {
     fun `Getting Super Hero Detail With Success`() =
         runBlockingTest {
             // given
-            whenever(superHeroesRepository.getSuperHeroesDetailPersistedData(1)).doReturn(getMockedSuperHeroDetail().right())
+            whenever(superHeroesRepository.getSuperHeroesDetailPersistedData(1)).doReturn(
+                getMockedSuperHeroDetail().right()
+            )
             // when
             val actualResult = getSuperHeroDetailUc.run(1)
             // then
@@ -123,7 +135,7 @@ class UseCaseTest : KoinTest {
         }
 
 
-    private fun getMockedSuperHeroData() : SuperHeroList = SuperHeroList(emptyList())
+    private fun getMockedSuperHeroData(): SuperHeroList = SuperHeroList(emptyList())
 
-    private fun getMockedSuperHeroDetail() : SuperHero = SuperHero(1,"test","test")
+    private fun getMockedSuperHeroDetail(): SuperHero = SuperHero(1, "test", "test")
 }

@@ -4,11 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
-import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.feature.SplashDomainLayerBridge
+import es.plexus.android.domain.model.Failure
 import es.plexus.android.presentation.base.BaseMvvmView
 import es.plexus.android.presentation.base.ScreenState
 import es.plexus.android.presentation.databinding.ActivitySplashBinding
