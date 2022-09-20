@@ -1,7 +1,12 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id(Plugins.androidApplication)
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinAndroidExtensions)
+    kotlin(Plugins.kotlinKapt)
+    id(Plugins.safeArgs)
+    id(Plugins.daggerHilt)
 }
 
 android {
@@ -56,5 +61,7 @@ dependencies {
     implementation(project(":data"))
 
     // 3rd party libraries
-    implementation(Libraries.koinAndroid)
+    implementation(Libraries.hiltAndroid)
+    kapt(Libraries.hiltCompiler)
+
 }

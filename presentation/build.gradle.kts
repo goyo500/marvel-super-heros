@@ -1,10 +1,10 @@
 plugins {
     id(Plugins.androidLibrary)
-
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinAndroidExtensions)
     kotlin(Plugins.kotlinKapt)
     id(Plugins.safeArgs)
+    id(Plugins.daggerHilt)
 }
 
 android {
@@ -65,7 +65,8 @@ dependencies {
     implementation(project(":domain"))
 
     // 3rd party libraries
-    implementation(Libraries.koinAndroid)
+    implementation(Libraries.hiltAndroid)
+    kapt(Libraries.hiltCompiler)
     implementation(Libraries.lottie)
     implementation(Libraries.glide)
 

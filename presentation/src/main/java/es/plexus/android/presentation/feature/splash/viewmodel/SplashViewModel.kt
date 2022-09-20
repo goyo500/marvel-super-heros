@@ -1,17 +1,22 @@
 package es.plexus.android.presentation.feature.splash.viewmodel
 
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHeroList
 import es.plexus.android.domain.feature.SplashDomainLayerBridge
+import es.plexus.android.domain.usecase.SynchronizeSuperHeroesListDataUc
 import es.plexus.android.presentation.base.BaseMvvmViewModel
 import es.plexus.android.presentation.base.ScreenState
 import es.plexus.android.presentation.feature.splash.ui.state.SplashState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@HiltViewModel
 @ExperimentalCoroutinesApi
-class SplashViewModel(bridge: SplashDomainLayerBridge) :
+class SplashViewModel @Inject constructor(bridge: SplashDomainLayerBridge) :
     BaseMvvmViewModel<SplashDomainLayerBridge, SplashState>(bridge = bridge) {
 
     fun onViewCreated() {

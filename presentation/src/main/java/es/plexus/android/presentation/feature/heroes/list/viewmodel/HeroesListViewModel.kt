@@ -1,18 +1,24 @@
 package es.plexus.android.presentation.feature.heroes.list.viewmodel
 
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
+import es.plexus.android.domain.feature.HeroDetailDomainLayerBridge
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHeroList
 import es.plexus.android.domain.feature.HeroesListDomainLayerBridge
+import es.plexus.android.domain.usecase.GetSuperHeroDetailUc
 import es.plexus.android.presentation.base.BaseMvvmViewModel
 import es.plexus.android.presentation.base.ScreenState
 import es.plexus.android.presentation.feature.heroes.list.ui.state.HerosListState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@HiltViewModel
 @ExperimentalCoroutinesApi
-class HeroesListViewModel(
+class HeroesListViewModel @Inject constructor(
     bridge: HeroesListDomainLayerBridge
 ) : BaseMvvmViewModel<HeroesListDomainLayerBridge, HerosListState>(bridge = bridge) {
 

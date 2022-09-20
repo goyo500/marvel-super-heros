@@ -5,18 +5,15 @@ import es.plexus.android.domain.DomainLayerContract
 import es.plexus.android.domain.base.BaseDomainLayerBridge
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHero
+import es.plexus.android.domain.usecase.GetSuperHeroDetailUc
+import javax.inject.Inject
 
-const val HERO_DETAIL_BRIDGE_TAG = "heroDetailDomainLayerBridge"
 
-interface HeroDetailDomainLayerBridge : BaseDomainLayerBridge {
-    suspend fun getSuperHeroDetail(params : Int): Either<Failure, SuperHero>
-}
+class HeroDetailDomainLayerBridge @Inject constructor(
+    val getSuperHeroDetailUc: GetSuperHeroDetailUc
+): BaseDomainLayerBridge {
 
-internal class HeroDetailDomainLayerBridgeImpl(
-    private val getSuperHeroDetailUc: DomainLayerContract.Presentation.UseCase<Int, SuperHero>
-) : HeroDetailDomainLayerBridge {
-
-    override suspend fun getSuperHeroDetail(params: Int): Either<Failure, SuperHero> =
+    suspend fun getSuperHeroDetail(params: Int): Either<Failure, SuperHero> =
         getSuperHeroDetailUc.run(params)
 
 }

@@ -1,8 +1,8 @@
 plugins {
     id (Plugins.androidLibrary)
-
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinKapt)
+    id(Plugins.daggerHilt)
 }
 
 android {
@@ -43,7 +43,8 @@ dependencies {
     implementation(Libraries.kotlinCoroutinesCore)
     implementation(Libraries.kotlinCoroutinesAndroid)
     // 3rd party libraries
-    implementation(Libraries.koinAndroid)
+    implementation(Libraries.hiltAndroid)
+    kapt(Libraries.hiltCompiler)
     api(Libraries.arrowCore)
     api(Libraries.arrowSyntax)
     kapt(Libraries.arrowMeta)

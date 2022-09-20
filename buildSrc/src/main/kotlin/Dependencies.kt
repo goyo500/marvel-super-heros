@@ -1,14 +1,49 @@
 const val kotlinVersion = "1.7.10"
 
+object Versions {
+    const val gradle = "4.3.14"
+    const val safeArgs = "2.5.2"
+    const val hilt = "2.43.2"
+    const val androixHilt = "1.0.0"
+
+    // core & kotlin
+    const val coroutines = "1.6.4"
+    const val coroutinesAdapter = "0.9.2"
+    const val stdLib = "1.7.10"
+
+    // androidx
+    const val appCompat = "1.6.0-alpha05"
+    const val lifecycle = "2.6.0-alpha02"
+    const val constraintLayout = "2.0.4"
+    const val recyclerView = "1.1.0"
+    const val cardView = "1.0.0"
+    const val coreDx = "1.9.0"
+    const val room = "2.5.0-alpha03"
+    const val navigation = "2.5.1"
+
+    // 3rd party
+    const val googleMaterial = "1.4.0"
+    const val arrow = "0.11.0"
+    const val retrofit = "2.8.1"
+    const val moshi = "1.9.3"
+    const val interceptor = "4.9.0"
+    const val lottie = "3.7.1"
+    const val glide = "4.11.0"
+
+    // test
+    const val junit = "4.13"
+    const val androidxTestRunner = "1.3.0"
+    const val androidxTestRules = "1.3.0"
+    const val mockitoAndroid = "3.2.4"
+    const val mockitoKotlin = "2.1.0"
+}
+
 object Build {
-    object Versions {
-        const val gradle = "4.3.14"
-        const val safeArgs = "2.5.2"
-    }
 
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.gradle}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.safeArgs}"
+    const val daggerHilstPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
 
 }
 
@@ -20,6 +55,7 @@ object Plugins {
     const val version = "version.gradle.kts"
     const val kotlinKapt = "kapt"
     const val safeArgs = "androidx.navigation.safeargs"
+    const val daggerHilt = "dagger.hilt.android.plugin"
 }
 
 object AndroidSdk {
@@ -59,16 +95,21 @@ object Libraries {
     const val androidxRoomCoroutines = "androidx.room:room-ktx:${Versions.room}"
     const val androidxRoomcompiler = "androidx.room:room-compiler:${Versions.room}"
 
+
     // Kotlin
     const val navigationFragment =
         "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val navigationFeatures = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
 
     // google
     const val googleMaterial = "com.google.android.material:material:${Versions.googleMaterial}"
 
-    // koin
-    const val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
+    // hilt
+    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltAndroidXCompiler = "androidx.hilt:hilt-compiler:${Versions.androixHilt}"
+
 
     // retrofit
     const val retrofitCoroutinesAdapter =
@@ -89,42 +130,9 @@ object Libraries {
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
     const val kotlinCoroutinesTest =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
-    const val koinTest = "io.insert-koin:koin-test:${Versions.koin}"
+    const val koinTest = "io.insert-koin:koin-test:${Versions.hilt}"
     const val mockitoAndroid = "org.mockito:mockito-android:${Versions.mockitoAndroid}"
     const val testRunner = "androidx.test:runner:${Versions.androidxTestRunner}"
     const val testRules = "androidx.test:rules:${Versions.androidxTestRules}"
 
-    private object Versions {
-        // core & kotlin
-        const val coroutines = "1.6.4"
-        const val coroutinesAdapter = "0.9.2"
-        const val stdLib = "1.7.10"
-
-        // androidx
-        const val appCompat = "1.6.0-alpha05"
-        const val lifecycle = "2.6.0-alpha02"
-        const val constraintLayout = "2.0.4"
-        const val recyclerView = "1.1.0"
-        const val cardView = "1.0.0"
-        const val coreDx = "1.9.0"
-        const val room = "2.5.0-alpha03"
-        const val navigation = "2.4.0-alpha04"
-
-        // 3rd party
-        const val googleMaterial = "1.4.0"
-        const val koin = "3.2.1"
-        const val arrow = "0.11.0"
-        const val retrofit = "2.8.1"
-        const val moshi = "1.9.3"
-        const val interceptor = "4.9.0"
-        const val lottie = "3.7.1"
-        const val glide = "4.11.0"
-
-        // test
-        const val junit = "4.13"
-        const val androidxTestRunner = "1.3.0"
-        const val androidxTestRules = "1.3.0"
-        const val mockitoAndroid = "3.2.4"
-        const val mockitoKotlin = "2.1.0"
-    }
 }

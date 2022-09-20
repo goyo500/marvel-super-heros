@@ -2,8 +2,11 @@ package es.plexus.android.presentation.feature.splash.ui.view
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import dagger.hilt.android.AndroidEntryPoint
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.feature.SplashDomainLayerBridge
 import es.plexus.android.presentation.base.BaseMvvmView
@@ -14,16 +17,16 @@ import es.plexus.android.presentation.feature.heroes.list.ui.view.HeroesActivity
 import es.plexus.android.presentation.feature.splash.ui.state.SplashState
 import es.plexus.android.presentation.feature.splash.viewmodel.SplashViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
+
+@AndroidEntryPoint
 @ExperimentalCoroutinesApi
 class SplashActivity : AppCompatActivity(),
     BaseMvvmView<SplashViewModel, SplashDomainLayerBridge, SplashState> {
 
 
-    override val viewModel: SplashViewModel by viewModel()
+    override val viewModel: SplashViewModel by viewModels()
     private lateinit var viewBinding: ActivitySplashBinding
 
 

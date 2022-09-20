@@ -5,23 +5,19 @@ import es.plexus.android.domain.DomainLayerContract
 import es.plexus.android.domain.base.BaseDomainLayerBridge
 import es.plexus.android.domain.model.Failure
 import es.plexus.android.domain.model.SuperHeroList
+import es.plexus.android.domain.usecase.GetSuperHeroesListPersistedDataUc
+import es.plexus.android.domain.usecase.SynchronizeSuperHeroesListDataUc
+import javax.inject.Inject
 
-const val SPLASH_BRIDGE_TAG = "splashDomainLayerBridge"
+class SplashDomainLayerBridge @Inject constructor (
+    private val synchronizeSuperHeroesListUc: SynchronizeSuperHeroesListDataUc,
+    private val getSuperHeroesListUc: GetSuperHeroesListPersistedDataUc,
+) : BaseDomainLayerBridge {
 
-interface SplashDomainLayerBridge : BaseDomainLayerBridge {
-    suspend fun synchronizeSuperHeroesList(): Either<Failure, Boolean>
-    suspend fun getSuperHeroesList(): Either<Failure, SuperHeroList>
-}
-
-internal class SplashDomainLayerBridgeImpl(
-    private val synchronizeSuperHeroesListUc: DomainLayerContract.Presentation.UseCase<Nothing, Boolean>,
-    private val getSuperHeroesListUc: DomainLayerContract.Presentation.UseCase<Nothing, SuperHeroList>,
-) : SplashDomainLayerBridge {
-
-    override suspend fun synchronizeSuperHeroesList(): Either<Failure, Boolean> =
+    suspend fun synchronizeSuperHeroesList(): Either<Failure, Boolean> =
         synchronizeSuperHeroesListUc.run()
 
-    override suspend fun getSuperHeroesList(): Either<Failure, SuperHeroList> =
+    suspend fun getSuperHeroesList(): Either<Failure, SuperHeroList> =
         getSuperHeroesListUc.run()
 
 }

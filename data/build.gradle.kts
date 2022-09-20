@@ -2,10 +2,10 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 
 plugins {
     id (Plugins.androidLibrary)
-
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinAndroidExtensions)
     kotlin(Plugins.kotlinKapt)
+    id(Plugins.daggerHilt)
 }
 
 val publicKey: String = gradleLocalProperties(rootDir).getProperty("publicApiKey")
@@ -64,7 +64,8 @@ dependencies {
     implementation(project(":domain"))
 
     // 3rd party libraries
-    implementation(Libraries.koinAndroid)
+    implementation(Libraries.hiltAndroid)
+    kapt(Libraries.hiltCompiler)
     implementation(Libraries.retrofit)
     implementation(Libraries.retrofitMoshiConverter)
     implementation(Libraries.moshi)

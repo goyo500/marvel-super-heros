@@ -5,8 +5,10 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
+import dagger.hilt.android.AndroidEntryPoint
 import es.plexus.android.presentation.databinding.FragmentErrorDialogBinding
 
+@AndroidEntryPoint
 class ErrorDialogFragment(private val callback: () -> Unit, private val message: String) :
     DialogFragment() {
 
