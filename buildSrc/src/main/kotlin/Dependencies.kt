@@ -1,7 +1,7 @@
 const val kotlinVersion = "1.7.10"
 
 object Versions {
-    const val gradle = "4.3.14"
+    const val gradle = "7.1.3"
     const val safeArgs = "2.5.2"
     const val hilt = "2.43.2"
     const val androixHilt = "1.0.0"

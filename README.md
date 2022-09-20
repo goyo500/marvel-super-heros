@@ -17,7 +17,7 @@ Last step, Detail View shows the selected hero data.
 - Kotlin Coroutines
 - Navigation Component
 - Lifecycle and ViewModel
-- Koin
+- Dagger Hilt
 - Moshi
 - Room DB
 - Retrofit
