@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/heroesListFragment">
+
+    <fragment
+        android:id="@+id/heroesListFragment"
+        android:name="es.plexus.android.presentation.feature.heroes.list.ui.view.HeroesListFragment"
+        android:label="fragment_heroes_list"
+        tools:layout="@layout/fragment_heroes_list">
+        <action
+            android:id="@+id/action_heroesListFragment_to_heroDetailFragment"
+            app:destination="@id/heroDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/heroesListFragment"
+            app:popUpToSaveState="true"
+            app:restoreState="true">
+            <argument
+                android:name="id"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/heroDetailFragment"
+        android:name="es.plexus.android.presentation.feature.heroes.detail.ui.view.HeroDetailFragment"
+        android:label="fragment_hero_detail">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

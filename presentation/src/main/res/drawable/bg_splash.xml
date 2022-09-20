@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:opacity="opaque">
+
+    <item android:drawable="@android:color/white"/>
+
+    <item
+        android:bottom="130dp">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/splash_icon"/>
+    </item>
+
+
+</layer-list>
